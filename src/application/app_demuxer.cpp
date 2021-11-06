@@ -46,6 +46,12 @@ static void test_demuxer(){
     }while(packet_size > 0);
 }
 
+/*
+    一个GOP，就是一个group，有N个frame
+    N又 = I + B/P * M         M = N - 1
+
+    GOP是H264的最小单元。要是理解了这些。就可以轻易操作H264分为一段一段的。储存也好，解码也好。都会很容易 
+ */
 int app_demuxer(){
 
     test_demuxer();
